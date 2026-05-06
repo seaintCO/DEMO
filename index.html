@@ -22,39 +22,17 @@
     }
 
     @keyframes scanline {
-      0% {
-        transform: translateY(-100%);
-      }
-
-      100% {
-        transform: translateY(100%);
-      }
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
     }
 
     @keyframes pulse-glow {
-      0%, 100% {
-        opacity: 0.5;
-      }
-
-      50% {
-        opacity: 1;
-      }
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
     }
 
     @keyframes shimmer {
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    @keyframes almaPulse {
-      0%, 100% {
-        filter: drop-shadow(0 0 12px rgba(59,130,246,0.25));
-      }
-
-      50% {
-        filter: drop-shadow(0 0 35px rgba(59,130,246,0.6));
-      }
+      100% { transform: translateX(100%); }
     }
 
     .tech-grid {
@@ -66,22 +44,24 @@
       -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
     }
 
+    /* FIXED ELEVENLABS WIDGET */
     elevenlabs-convai {
       position: fixed !important;
       bottom: 24px !important;
       right: 24px !important;
       z-index: 999999 !important;
-      border-radius: 999px;
-      overflow: hidden;
-      animation: almaPulse 3s infinite ease-in-out;
-      filter: drop-shadow(0 0 20px rgba(59,130,246,0.35));
+      max-width: 360px !important;
+      width: auto !important;
     }
 
     @media (max-width: 768px) {
       elevenlabs-convai {
         bottom: 90px !important;
-        right: 16px !important;
-        transform: scale(0.92);
+        right: 12px !important;
+        left: 12px !important;
+        max-width: calc(100vw - 24px) !important;
+        transform: scale(0.85);
+        transform-origin: bottom right;
       }
     }
   </style>
@@ -99,49 +79,29 @@
       </a>
 
       <div class="hidden lg:flex items-center gap-8">
-        <a href="#services" class="text-sm font-medium hover:text-slate-900 transition-colors">
-          Services
-        </a>
-
-        <a href="#testimonials" class="text-sm font-medium hover:text-slate-900 transition-colors">
-          Testimonials
-        </a>
-
-        <a href="#about" class="text-sm font-medium hover:text-slate-900 transition-colors">
-          About Dr. Zac
-        </a>
-
-        <a href="#offer" class="text-sm font-medium text-amber-700 hover:text-amber-800 transition-colors">
-          New Patient Special
-        </a>
+        <a href="#services" class="text-sm font-medium hover:text-slate-900 transition-colors">Services</a>
+        <a href="#testimonials" class="text-sm font-medium hover:text-slate-900 transition-colors">Testimonials</a>
+        <a href="#about" class="text-sm font-medium hover:text-slate-900 transition-colors">About Dr. Zac</a>
+        <a href="#offer" class="text-sm font-medium text-amber-700 hover:text-amber-800 transition-colors">New Patient Special</a>
       </div>
 
-      <div class="flex items-center gap-4">
-        <a
-          href="#contact"
-          class="hidden md:inline-flex h-10 items-center justify-center rounded-full bg-slate-900 px-6 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
-        >
-          Request Appointment
-        </a>
-
-        <button class="lg:hidden p-2 text-slate-900">
-          <iconify-icon icon="solar:hamburger-menu-linear" width="24" stroke-width="1.5"></iconify-icon>
-        </button>
-      </div>
+      <a
+        href="#contact"
+        class="hidden md:inline-flex h-10 items-center justify-center rounded-full bg-slate-900 px-6 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition-all"
+      >
+        Request Appointment
+      </a>
     </div>
   </nav>
 
   <!-- Mobile Sticky CTA -->
   <div class="fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur-xl border-t border-slate-100 p-4 md:hidden">
-    <a
-      href="#contact"
-      class="flex h-12 w-full items-center justify-center rounded-full bg-slate-900 px-6 text-base font-medium text-white shadow-sm active:bg-slate-800 transition-all"
-    >
+    <a href="#contact" class="flex h-12 w-full items-center justify-center rounded-full bg-slate-900 px-6 text-base font-medium text-white shadow-sm">
       Request Appointment
     </a>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
     <div class="absolute inset-0 bg-slate-50 pointer-events-none"></div>
     <div class="absolute inset-0 tech-grid pointer-events-none"></div>
@@ -149,11 +109,7 @@
 
     <div class="max-w-7xl mx-auto px-6 relative flex flex-col items-center text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-blue-100 text-blue-700 text-xs font-mono mb-8 shadow-[0_0_15px_rgba(59,130,246,0.15)] relative overflow-hidden">
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0"
-          style="animation: scanline 2s linear infinite;"
-        ></div>
-
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0" style="animation: scanline 2s linear infinite;"></div>
         <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
         <span>Accepting New Patients // System Online</span>
       </div>
@@ -171,38 +127,28 @@
       </p>
 
       <div class="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full sm:w-auto">
-        <a
-          href="#contact"
-          class="w-full sm:w-auto h-12 inline-flex items-center justify-center rounded-full bg-blue-600 px-8 text-sm font-medium text-white shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.5)] transition-all relative overflow-hidden group"
-        >
+        <a href="#contact" class="w-full sm:w-auto h-12 inline-flex items-center justify-center rounded-full bg-blue-600 px-8 text-sm font-medium text-white shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:bg-blue-500 transition-all relative overflow-hidden group">
           <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
-
           <span class="relative flex items-center gap-2">
             <iconify-icon icon="solar:bolt-linear" width="18"></iconify-icon>
             Request Appointment
           </span>
         </a>
 
-        <a
-          href="#offer"
-          class="w-full sm:w-auto h-12 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-slate-200 px-8 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-all font-mono uppercase tracking-wide text-xs"
-        >
+        <a href="#offer" class="w-full sm:w-auto h-12 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-slate-200 px-8 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-all font-mono uppercase tracking-wide text-xs">
           View New Patient Special
         </a>
       </div>
 
-      <!-- Trust Badges -->
       <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 pt-12 border-t border-slate-200/60 font-mono w-full relative z-10">
         <div class="flex flex-col items-center gap-2 text-xs font-medium text-slate-500">
           <iconify-icon icon="solar:shield-check-linear" width="24" class="text-blue-500"></iconify-icon>
           <span class="uppercase tracking-widest">FDA-Cleared</span>
         </div>
-
         <div class="flex flex-col items-center gap-2 text-xs font-medium text-slate-500">
           <iconify-icon icon="solar:graph-new-linear" width="24" class="text-blue-500"></iconify-icon>
           <span class="uppercase tracking-widest">Data-Driven Care</span>
         </div>
-
         <div class="flex flex-col items-center gap-2 text-xs font-medium text-slate-500">
           <iconify-icon icon="solar:radar-linear" width="24" class="text-blue-500"></iconify-icon>
           <span class="uppercase tracking-widest">Precision Targeting</span>
@@ -211,7 +157,7 @@
     </div>
   </section>
 
-  <!-- New Patient Offer -->
+  <!-- Offer -->
   <section id="offer" class="py-12 md:py-16 px-6 relative z-10 -mt-12">
     <div class="max-w-4xl mx-auto bg-slate-900 rounded-[2rem] p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative">
       <div class="absolute inset-0 tech-grid opacity-20 pointer-events-none"></div>
@@ -232,12 +178,10 @@
             <iconify-icon icon="solar:check-circle-linear" width="20" class="text-cyan-400 shrink-0 mt-0.5"></iconify-icon>
             Comprehensive Examination & Consultation
           </li>
-
           <li class="flex items-start gap-3 text-slate-300 text-sm md:text-base font-mono">
             <iconify-icon icon="solar:check-circle-linear" width="20" class="text-cyan-400 shrink-0 mt-0.5"></iconify-icon>
-            Digital X-rays (if clinically needed)
+            Digital X-rays if clinically needed
           </li>
-
           <li class="flex items-start gap-3 text-slate-300 text-sm md:text-base font-mono">
             <iconify-icon icon="solar:check-circle-linear" width="20" class="text-cyan-400 shrink-0 mt-0.5"></iconify-icon>
             Detailed Review of Findings
@@ -246,88 +190,64 @@
       </div>
 
       <div class="relative z-10 w-full md:w-auto shrink-0">
-        <a
-          href="#contact"
-          class="flex h-14 w-full md:w-auto items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-slate-900 shadow-lg hover:scale-105 transition-transform duration-300"
-        >
+        <a href="#contact" class="flex h-14 w-full md:w-auto items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-slate-900 shadow-lg hover:scale-105 transition-transform duration-300">
           Claim Special Offer
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Problem / Authority Section -->
+  <!-- Services -->
   <section id="services" class="py-24 bg-stone-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="max-w-2xl mx-auto text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 mb-4 text-balance">
           We Help People in Chronic Pain Get Their Life Back
         </h2>
-
         <p class="text-slate-500 text-base md:text-lg text-balance">
           Even if you've been told nothing can be done, our clinic focuses on
-          finding the root cause and building a personalized care plan
-          designed around you.
+          finding the root cause and building a personalized care plan designed around you.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
-          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform group-hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
             <iconify-icon icon="solar:bones-linear" width="24"></iconify-icon>
           </div>
-
-          <h3 class="text-xl font-semibold tracking-tight text-slate-900 mb-3">
-            Knee Pain Therapy
-          </h3>
-
+          <h3 class="text-xl font-semibold tracking-tight text-slate-900 mb-3">Knee Pain Therapy</h3>
           <p class="text-slate-500 text-sm mb-8 flex-grow">
-            Advanced therapies to reduce inflammation, improve mobility, and
-            stimulate natural healing in the knee joint without invasive
-            procedures.
+            Advanced therapies to reduce inflammation, improve mobility, and stimulate natural healing in the knee joint without invasive procedures.
           </p>
-
-          <a href="#" class="inline-flex items-center gap-2 text-sm font-mono text-slate-900 group-hover:text-blue-600 transition-colors mt-auto uppercase tracking-wide text-xs">
+          <a href="#contact" class="inline-flex items-center gap-2 text-sm font-mono text-slate-900 hover:text-blue-600 transition-colors mt-auto uppercase tracking-wide text-xs">
             Learn More
             <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
           </a>
         </div>
 
         <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
-          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform group-hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
             <iconify-icon icon="solar:pulse-linear" width="24"></iconify-icon>
           </div>
-
-          <h3 class="text-xl font-semibold tracking-tight text-slate-900 mb-3">
-            Neuropathy Treatment
-          </h3>
-
+          <h3 class="text-xl font-semibold tracking-tight text-slate-900 mb-3">Neuropathy Treatment</h3>
           <p class="text-slate-500 text-sm mb-8 flex-grow">
-            Comprehensive protocols designed to restore nerve function, reduce
-            numbness and tingling, and improve quality of life.
+            Comprehensive protocols designed to support nerve function, reduce numbness and tingling, and improve quality of life.
           </p>
-
-          <a href="#" class="inline-flex items-center gap-2 text-sm font-mono text-slate-900 group-hover:text-blue-600 transition-colors mt-auto uppercase tracking-wide text-xs">
+          <a href="#contact" class="inline-flex items-center gap-2 text-sm font-mono text-slate-900 hover:text-blue-600 transition-colors mt-auto uppercase tracking-wide text-xs">
             Learn More
             <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
           </a>
         </div>
 
         <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
-          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform group-hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
             <iconify-icon icon="solar:body-shape-linear" width="24"></iconify-icon>
           </div>
-
-          <h3 class="text-xl font-semibold tracking-tight text-slate-900 mb-3">
-            Spinal Decompression
-          </h3>
-
+          <h3 class="text-xl font-semibold tracking-tight text-slate-900 mb-3">Spinal Decompression</h3>
           <p class="text-slate-500 text-sm mb-8 flex-grow">
-            Gentle, non-surgical therapy to relieve pressure on spinal discs,
-            treating bulging discs, sciatica, and severe back pain.
+            Gentle, non-surgical therapy to relieve pressure on spinal discs, treating bulging discs, sciatica, and severe back pain.
           </p>
-
-          <a href="#" class="inline-flex items-center gap-2 text-sm font-mono text-slate-900 group-hover:text-blue-600 transition-colors mt-auto uppercase tracking-wide text-xs">
+          <a href="#contact" class="inline-flex items-center gap-2 text-sm font-mono text-slate-900 hover:text-blue-600 transition-colors mt-auto uppercase tracking-wide text-xs">
             Learn More
             <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
           </a>
@@ -350,8 +270,7 @@
             alt="Clinic Environment"
             class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700"
           />
-
-          <div class="flex absolute top-0 right-0 bottom-0 left-0 items-center justify-center">
+          <div class="flex absolute inset-0 items-center justify-center">
             <div class="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg text-slate-900 group-hover:bg-amber-400 group-hover:text-white transition-colors">
               <iconify-icon icon="solar:play-bold" width="24"></iconify-icon>
             </div>
@@ -367,14 +286,9 @@
               <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
               <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
             </div>
-
-            <p class="text-slate-700 font-medium text-base mb-2">
-              "Best of all: NO SURGERY."
-            </p>
-
+            <p class="text-slate-700 font-medium text-base mb-2">"Best of all: NO SURGERY."</p>
             <p class="text-slate-500 text-sm">
-              I was told surgery was my only option for knee pain. After a few
-              months here, I'm walking pain-free.
+              I was told surgery was my only option for knee pain. After a few months here, I'm walking pain-free.
             </p>
           </div>
 
@@ -386,14 +300,9 @@
               <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
               <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
             </div>
-
-            <p class="text-slate-700 font-medium text-base mb-2">
-              "Dr. Zac truly looks at the big picture."
-            </p>
-
+            <p class="text-slate-700 font-medium text-base mb-2">"Dr. Zac truly looks at the big picture."</p>
             <p class="text-slate-500 text-sm">
-              He didn't just crack my back; he explained why the pain was
-              happening and built a plan to fix it.
+              He didn't just crack my back; he explained why the pain was happening and built a plan to fix it.
             </p>
           </div>
 
@@ -405,56 +314,35 @@
               <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
               <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
             </div>
-
             <p class="text-slate-700 font-medium text-base mb-2">
               "I noticed less tension, better posture, and fewer headaches."
             </p>
-
             <p class="text-slate-500 text-sm">
-              The clinic environment is incredibly calm and professional.
-              Highly recommend.
+              The clinic environment is incredibly calm and professional. Highly recommend.
             </p>
-          </div>
-
-          <div class="pt-4">
-            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-slate-900 hover:text-amber-600 transition-colors">
-              Watch More Patient Stories
-              <iconify-icon icon="solar:arrow-right-linear" width="16" stroke-width="1.5"></iconify-icon>
-            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Dr. Zac -->
+  <!-- About -->
   <section class="bg-stone-50 pt-24 pb-24" id="about">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="md:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 bg-white border-slate-100 border rounded-[2.5rem] pt-8 pr-8 pb-8 pl-8 shadow-sm gap-x-12 gap-y-12 items-center">
+      <div class="md:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 bg-white border-slate-100 border rounded-[2.5rem] p-8 shadow-sm items-center">
         <div class="flex-1 space-y-6">
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-medium">
             Meet the Doctor
           </div>
-
           <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 text-balance">
             A Different Kind of Care
           </h2>
-
           <p class="text-slate-500 text-base md:text-lg leading-relaxed text-balance">
-            Dr. Zac combines advanced therapy, chiropractic care, and a
-            root-cause approach to help patients understand what's happening
-            in their body and what's possible for their future. We don't
-            believe in temporary fixes.
+            Dr. Zac combines advanced therapy, chiropractic care, and a root-cause approach to help patients understand what's happening in their body and what's possible for their future.
           </p>
-
-          <div class="pt-4">
-            <a
-              href="#contact"
-              class="inline-flex h-12 items-center justify-center rounded-full bg-slate-900 px-8 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition-all"
-            >
-              Meet Dr. Zac
-            </a>
-          </div>
+          <a href="#contact" class="inline-flex h-12 items-center justify-center rounded-full bg-slate-900 px-8 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition-all">
+            Meet Dr. Zac
+          </a>
         </div>
 
         <div class="w-full lg:w-[400px] shrink-0">
@@ -477,120 +365,66 @@
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
           Your Path to Relief
         </h2>
-
         <p class="text-slate-500 text-base md:text-lg">
           A simple, transparent process to get you back to living well.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden flex flex-col">
-          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">
-            1
-          </div>
-
-          <div class="relative z-10 flex-grow">
-            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">
-              01
-            </div>
-
-            <h3 class="text-base font-semibold text-slate-900 mb-2">
-              Schedule Consultation
-            </h3>
-
-            <p class="text-slate-500 text-sm">
-              Book your initial visit to discuss your symptoms.
-            </p>
+        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden">
+          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">1</div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">01</div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2">Schedule Consultation</h3>
+            <p class="text-slate-500 text-sm">Book your initial visit to discuss your symptoms.</p>
           </div>
         </div>
 
-        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden flex flex-col md:mt-4">
-          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">
-            2
-          </div>
-
-          <div class="relative z-10 flex-grow">
-            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">
-              02
-            </div>
-
-            <h3 class="text-base font-semibold text-slate-900 mb-2">
-              Complete Evaluation
-            </h3>
-
-            <p class="text-slate-500 text-sm">
-              Thorough exam to find the root cause.
-            </p>
+        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden md:mt-4">
+          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">2</div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">02</div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2">Complete Evaluation</h3>
+            <p class="text-slate-500 text-sm">Thorough exam to find the root cause.</p>
           </div>
         </div>
 
-        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden flex flex-col md:mt-8">
-          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">
-            3
-          </div>
-
-          <div class="relative z-10 flex-grow">
-            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">
-              03
-            </div>
-
-            <h3 class="text-base font-semibold text-slate-900 mb-2">
-              Review Findings
-            </h3>
-
-            <p class="text-slate-500 text-sm">
-              Understand exactly what's going on.
-            </p>
+        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden md:mt-8">
+          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">3</div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">03</div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2">Review Findings</h3>
+            <p class="text-slate-500 text-sm">Understand exactly what's going on.</p>
           </div>
         </div>
 
-        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden flex flex-col md:mt-12">
-          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">
-            4
-          </div>
-
-          <div class="relative z-10 flex-grow">
-            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">
-              04
-            </div>
-
-            <h3 class="text-base font-semibold text-slate-900 mb-2">
-              Begin Plan
-            </h3>
-
-            <p class="text-slate-500 text-sm">
-              Start your personalized care protocol.
-            </p>
+        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden md:mt-12">
+          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">4</div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 font-medium mb-4 shadow-sm text-sm">04</div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2">Begin Plan</h3>
+            <p class="text-slate-500 text-sm">Start your personalized care protocol.</p>
           </div>
         </div>
 
-        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden flex flex-col md:mt-16">
-          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">
-            5
-          </div>
-
-          <div class="relative z-10 flex-grow">
+        <div class="relative bg-stone-50 rounded-3xl p-6 border border-slate-100 overflow-hidden md:mt-16">
+          <div class="absolute -right-4 -top-8 text-[8rem] font-semibold text-slate-200/50 pointer-events-none leading-none select-none">5</div>
+          <div class="relative z-10">
             <div class="w-10 h-10 rounded-full bg-blue-500 border border-blue-600 flex items-center justify-center text-white font-mono mb-4 shadow-[0_0_15px_rgba(59,130,246,0.4)] text-sm relative overflow-hidden">
               <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
               <span class="relative z-10">05</span>
             </div>
-
-            <h3 class="text-base font-semibold text-slate-900 mb-2">
-              Track Progress
-            </h3>
-
-            <p class="text-slate-500 text-sm">
-              Achieve long-term wellness and relief.
-            </p>
+            <h3 class="text-base font-semibold text-slate-900 mb-2">Track Progress</h3>
+            <p class="text-slate-500 text-sm">Achieve long-term wellness and relief.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Longevity Calculator Section -->
+  <!-- Longevity Calculator -->
   <section class="py-24 bg-slate-900 relative overflow-hidden text-white border-y border-slate-800">
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30"></div>
     <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
     <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -606,16 +440,12 @@
         </h2>
 
         <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
-          Discover how proactive spinal care, mobility restoration, and nerve
-          health can potentially add active, pain-free years to your life.
+          Discover how proactive spinal care, mobility restoration, and nerve health can potentially add active, pain-free years to your life.
         </p>
       </div>
 
       <div class="bg-slate-800/40 backdrop-blur-xl border border-slate-700 p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent h-full w-full opacity-50 pointer-events-none"
-          style="animation: scanline 4s linear infinite;"
-        ></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent h-full w-full opacity-50 pointer-events-none" style="animation: scanline 4s linear infinite;"></div>
 
         <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div class="space-y-8">
@@ -624,15 +454,7 @@
                 <span>Current Age</span>
                 <span class="text-cyan-400">45 Years</span>
               </label>
-
-              <input
-                type="range"
-                min="20"
-                max="80"
-                value="45"
-                class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
-                oninput="this.previousElementSibling.lastElementChild.innerText = this.value + ' Years'"
-              />
+              <input type="range" min="20" max="80" value="45" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500" oninput="this.previousElementSibling.lastElementChild.innerText = this.value + ' Years'" />
             </div>
 
             <div>
@@ -640,15 +462,7 @@
                 <span>Current Mobility Level</span>
                 <span class="text-cyan-400">Moderate Pain</span>
               </label>
-
-              <input
-                type="range"
-                min="1"
-                max="100"
-                value="40"
-                class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
-                oninput="const levels=['Severe','Moderate','Mild','Optimal']; this.previousElementSibling.lastElementChild.innerText = levels[Math.floor((this.value-1)/25)] || 'Optimal'"
-              />
+              <input type="range" min="1" max="100" value="40" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500" oninput="const levels=['Severe','Moderate','Mild','Optimal']; this.previousElementSibling.lastElementChild.innerText = levels[Math.floor((this.value-1)/25)] || 'Optimal'" />
             </div>
 
             <div>
@@ -656,40 +470,24 @@
                 <span>Weekly Treatment Frequency</span>
                 <span class="text-cyan-400">2 Sessions</span>
               </label>
-
-              <input
-                type="range"
-                min="1"
-                max="4"
-                value="2"
-                class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
-                oninput="this.previousElementSibling.lastElementChild.innerText = this.value + ' Sessions'"
-              />
+              <input type="range" min="1" max="4" value="2" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500" oninput="this.previousElementSibling.lastElementChild.innerText = this.value + ' Sessions'" />
             </div>
           </div>
 
           <div class="bg-slate-900/80 rounded-3xl p-8 border border-slate-700/50 text-center flex flex-col justify-center items-center h-full relative">
             <div class="absolute inset-0 bg-cyan-500/5 blur-2xl rounded-full"></div>
-
             <p class="text-slate-400 text-sm font-mono uppercase tracking-widest mb-2 relative z-10">
               Projected Active Years Gained
             </p>
-
-            <div class="text-7xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 tracking-tighter relative z-10" style="font-feature-settings: 'tnum';">
+            <div class="text-7xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 tracking-tighter relative z-10">
               +7.4
             </div>
-
             <p class="text-slate-500 text-sm relative z-10 text-balance">
-              Based on improved joint mobility, reduced systemic inflammation,
-              and restored nerve function.
+              Based on improved joint mobility, reduced systemic inflammation, and restored nerve function.
             </p>
-
             <div class="mt-8 w-full bg-slate-800 rounded-full h-1.5 overflow-hidden relative z-10">
               <div class="bg-gradient-to-r from-cyan-400 to-blue-500 w-3/4 h-full rounded-full relative">
-                <div
-                  class="absolute top-0 right-0 bottom-0 w-8 bg-white/20 blur-[2px] rounded-full"
-                  style="animation: pulse-glow 2s infinite;"
-                ></div>
+                <div class="absolute top-0 right-0 bottom-0 w-8 bg-white/20 blur-[2px] rounded-full" style="animation: pulse-glow 2s infinite;"></div>
               </div>
             </div>
           </div>
@@ -698,7 +496,7 @@
     </div>
   </section>
 
-  <!-- Content / Education Section -->
+  <!-- Education -->
   <section class="py-24 bg-stone-50 border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -707,29 +505,17 @@
             Learn How to Move, Heal, and Live Better
           </h2>
         </div>
-
-        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-slate-900 hover:text-amber-600 transition-colors shrink-0">
+        <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-slate-900 hover:text-amber-600 transition-colors shrink-0">
           Follow Us for More
-          <iconify-icon icon="solar:arrow-right-linear" width="16" stroke-width="1.5"></iconify-icon>
+          <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
         </a>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
         <div class="group cursor-pointer">
           <div class="relative aspect-[4/3] rounded-3xl bg-slate-200 overflow-hidden mb-4 border border-slate-100">
-            <img
-              src="https://images.unsplash.com/photo-1550831107-1553da8c8464?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Knee Pain"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-
-            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-300"></div>
-
-            <div class="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-900 shadow-sm group-hover:bg-amber-400 group-hover:text-white transition-colors">
-              <iconify-icon icon="solar:play-bold" width="16"></iconify-icon>
-            </div>
+            <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Knee Pain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-
           <h3 class="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-amber-600 transition-colors">
             Why Your Knee Pain Isn't Going Away
           </h3>
@@ -737,19 +523,8 @@
 
         <div class="group cursor-pointer">
           <div class="relative aspect-[4/3] rounded-3xl bg-slate-200 overflow-hidden mb-4 border border-slate-100">
-            <img
-              src="https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Neuropathy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-
-            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-300"></div>
-
-            <div class="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-900 shadow-sm group-hover:bg-amber-400 group-hover:text-white transition-colors">
-              <iconify-icon icon="solar:play-bold" width="16"></iconify-icon>
-            </div>
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Neuropathy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-
           <h3 class="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-amber-600 transition-colors">
             What Neuropathy Symptoms Mean
           </h3>
@@ -757,19 +532,8 @@
 
         <div class="group cursor-pointer">
           <div class="relative aspect-[4/3] rounded-3xl bg-slate-200 overflow-hidden mb-4 border border-slate-100">
-            <img
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Spinal Decompression"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-
-            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-300"></div>
-
-            <div class="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-900 shadow-sm group-hover:bg-amber-400 group-hover:text-white transition-colors">
-              <iconify-icon icon="solar:play-bold" width="16"></iconify-icon>
-            </div>
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spinal Decompression" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-
           <h3 class="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-amber-600 transition-colors">
             How Spinal Decompression Works
           </h3>
@@ -778,7 +542,7 @@
     </div>
   </section>
 
-  <!-- Final CTA Section -->
+  <!-- Final CTA -->
   <section id="contact" class="py-24 bg-slate-900 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
 
@@ -786,16 +550,10 @@
       <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-6 text-balance">
         Ready to Find Out What's Possible?
       </h2>
-
       <p class="text-slate-300 text-lg mb-10 text-balance">
-        Start with a simple consultation and learn what options may be
-        available for your pain and long-term health.
+        Start with a simple consultation and learn what options may be available for your pain and long-term health.
       </p>
-
-      <a
-        href="mailto:info@sjtherapeutics.com"
-        class="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-base font-medium text-slate-900 shadow-lg hover:scale-105 transition-transform duration-300"
-      >
+      <a href="mailto:info@sjtherapeutics.com" class="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-base font-medium text-slate-900 shadow-lg hover:scale-105 transition-transform duration-300">
         Request Appointment
       </a>
     </div>
@@ -805,32 +563,24 @@
   <footer class="bg-white pt-16 pb-8 border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div class="col-span-1 md:col-span-1">
+        <div>
           <div class="flex items-center gap-2 mb-4">
             <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-semibold tracking-tighter text-sm">
               SJT
             </div>
-
             <span class="text-slate-900 font-semibold tracking-tight text-base">
-              Spine & Joint
-              <br />
-              Therapeutics
+              Spine & Joint<br />Therapeutics
             </span>
           </div>
-
           <p class="text-slate-500 text-sm mb-4">
             Advanced, non-invasive care for long-term wellness.
           </p>
         </div>
 
         <div>
-          <h4 class="font-semibold text-slate-900 mb-4 text-sm tracking-tight">
-            Contact
-          </h4>
-
+          <h4 class="font-semibold text-slate-900 mb-4 text-sm tracking-tight">Contact</h4>
           <ul class="space-y-3 text-sm text-slate-500">
             <li>Brentwood, TN</li>
-
             <li>
               <a href="mailto:info@sjtherapeutics.com" class="hover:text-amber-600 transition-colors">
                 info@sjtherapeutics.com
@@ -840,10 +590,7 @@
         </div>
 
         <div>
-          <h4 class="font-semibold text-slate-900 mb-4 text-sm tracking-tight">
-            Hours
-          </h4>
-
+          <h4 class="font-semibold text-slate-900 mb-4 text-sm tracking-tight">Hours</h4>
           <ul class="space-y-3 text-sm text-slate-500">
             <li>Monday–Thursday</li>
             <li>8:00 AM – 6:00 PM</li>
@@ -851,43 +598,20 @@
         </div>
 
         <div>
-          <h4 class="font-semibold text-slate-900 mb-4 text-sm tracking-tight">
-            Services
-          </h4>
-
+          <h4 class="font-semibold text-slate-900 mb-4 text-sm tracking-tight">Services</h4>
           <ul class="space-y-3 text-sm text-slate-500">
-            <li>
-              <a href="#services" class="hover:text-amber-600 transition-colors">
-                Knee Pain Therapy
-              </a>
-            </li>
-
-            <li>
-              <a href="#services" class="hover:text-amber-600 transition-colors">
-                Neuropathy Treatment
-              </a>
-            </li>
-
-            <li>
-              <a href="#services" class="hover:text-amber-600 transition-colors">
-                Spinal Decompression
-              </a>
-            </li>
+            <li><a href="#services" class="hover:text-amber-600 transition-colors">Knee Pain Therapy</a></li>
+            <li><a href="#services" class="hover:text-amber-600 transition-colors">Neuropathy Treatment</a></li>
+            <li><a href="#services" class="hover:text-amber-600 transition-colors">Spinal Decompression</a></li>
           </ul>
         </div>
       </div>
 
       <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <p>© 2026 Spine & Joint Therapeutics. All rights reserved.</p>
-
         <div class="flex gap-4">
-          <a href="#" class="hover:text-slate-600 transition-colors">
-            Privacy Policy
-          </a>
-
-          <a href="#" class="hover:text-slate-600 transition-colors">
-            Terms of Service
-          </a>
+          <a href="#" class="hover:text-slate-600 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-600 transition-colors">Terms of Service</a>
         </div>
       </div>
     </div>
